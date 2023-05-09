@@ -5,7 +5,7 @@
       = prurailze(@pix.errors.count, 'error')
       prevented this pic from saving.
       %ul 
-        - @pic.errors.full_message.each do |msg|
+        - @pic.errors.full_messages.each do |msg|
           %li= msg 
 
   .form_group 
