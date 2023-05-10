@@ -1,6 +1,7 @@
 %h1= @pic.title
 %p= @pic.description
+%p= @pic.user.email 
 
-= link_to 'Voltar', pics_path, class: "btn btn-info", role: 'button'
+= link_to 'Voltar', pics_path, class: "btn btn-info"
 = link_to 'Edit', edit_pic_path, class: 'btn btn-warning'
 = link_to 'Delete', pic_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-danger'
