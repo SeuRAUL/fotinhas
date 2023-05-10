@@ -2,7 +2,7 @@
   - if @pic.errors.any?
     #errors
       %h2 
-      = prurailze(@pix.errors.count, 'error')
+      = prurailze(@pic.errors.count, 'error')
       prevented this pic from saving.
       %ul 
         - @pic.errors.full_messages.each do |msg|
@@ -16,4 +16,4 @@
   -# .btn-group
 
   = f.button :submit, class: 'btn btn-success'
-  = link_to 'Cancel', root_path, class: 'btn btn-info'
+  = link_to 'Cancel', :back, class: 'btn btn-info'
