@@ -13,4 +13,7 @@
   .form_group 
     = f.input :description, input_html: { class: 'form-control' }
 
-  = f.button :submit, class: 'btn btn-info'
+  -# .btn-group
+
+  = f.button :submit, class: 'btn btn-success'
+  = link_to 'Cancel', root_path, class: 'btn btn-info'
