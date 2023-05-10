@@ -10,7 +10,22 @@
   = javascript_importmap_tags
 
 %body 
-  -flash.each do |name, msg|
-    =content_tag :div, msg, class: 'alert alert-info'
+  %nav.navbar.navbar-inverse 
+    .container 
+      .navbar-brand= link_to "Fotinhas", root_path
 
-  = yield 
+      - if user_signed_in?
+        %ul.nav.navbar-nav.navbar-left 
+          %li= link_to "Up it!", new_pic_path 
+          %li= link_to "Settings", edit_user_registration_path
+          %li= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }
+      - else
+        %ul.nav.navbar-nav.navbar-left 
+          %li= link_to "Join", new_user_registration_path 
+          %li= link_to "Log In", new_user_session_path 
+
+  .container
+    -flash.each do |name, msg|
+      =content_tag :div, msg, class: 'alert alert-info'
+
+    = yield 
