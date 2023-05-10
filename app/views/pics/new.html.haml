@@ -4,4 +4,7 @@
       .panel-heading 
         %h1 Post Pic 
       .panel-body 
+        .current_image 
+          %strong.center Right Now 
+          = image_tag @pic.picture.variant(:thumb) if pic.picture.attached?
         = render 'form'

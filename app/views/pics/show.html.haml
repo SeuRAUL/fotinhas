@@ -1,7 +1,13 @@
-%h1= @pic.title
-%p= @pic.description
-%p= @pic.user.email 
+.col-md-8.col-md-offset-2 
+  .row 
+    .panel.panel-default 
+      .panel-heading 
+        %h1= @pic.title
+      .panel-body 
+        = image_tag @pic.picture.variant(:thumb) if @pic.picture.attached?
+        %p= @pic.description
+        %p= @pic.user.email 
 
-= link_to 'Voltar', pics_path, class: "btn btn-info"
-= link_to 'Edit', edit_pic_path, class: 'btn btn-warning'
-= link_to 'Delete', pic_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-danger'
+        = link_to 'Voltar', pics_path, class: "btn btn-info"
+        = link_to 'Edit', edit_pic_path, class: 'btn btn-warning'
+        = link_to 'Delete', pic_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-danger'

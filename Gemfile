@@ -48,7 +48,7 @@ gem "sassc-rails"
 gem "jquery-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 gem 'haml', '~> 6.1', '>= 6.1.1'
 gem 'simple_form', '~> 5.2'
