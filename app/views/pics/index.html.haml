@@ -1,3 +1,6 @@
-- @pics.each do |pic|
-  %h2= link_to pic.title, pic
-  = image_tag pic.picture.variant :thumb if pic.picture.attached?
+.col-md-6.col-md-offset-3 
+  #pics.transistions-enabled
+    - @pics.each do |pic|
+      .box.panel.panel-default 
+        = image_tag pic.picture if pic.picture.attached?
+        %h2= link_to pic.title, pic
