@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## A simple insta likely app to study
 
-Things you may want to cover:
+* ruby 3.1.2p20
 
-* Ruby version
+* Rails 7.0.4.3
 
-* System dependencies
+User registration with Devise.
 
-* Configuration
+Store images with Active Storage.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Styled with bootstrap.

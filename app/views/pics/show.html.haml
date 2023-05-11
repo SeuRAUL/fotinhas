@@ -15,7 +15,10 @@
           .col-md-6 
             .btn-group.pull-right
               = link_to like_pic_path(@pic), data: { turbo_method: :put }, class: 'btn btn-default' do 
-                %span.glyphicon.glyphicon-thumbs-up 
+                - if (@pic.get_upvotes.size == 0)
+                  %span.glyphicon.glyphicon-heart-empty
+                - else  
+                  %span.glyphicon.glyphicon-heart 
                 = @pic.get_upvotes.size
               - if user_signed_in?
                 = link_to 'Fix Pic', edit_pic_path, class: 'btn btn-info'

@@ -3,4 +3,15 @@
     - @pics.each do |pic|
       .box.panel.panel-default 
         = image_tag pic.picture if pic.picture.attached?
-        %h2= link_to pic.title, pic
+        .panel-body
+          .row 
+            .col-md-10
+              %h2= link_to pic.title, pic
+            .col-md-2
+              .pull-right 
+                = link_to like_pic_path(pic), data: { turbo_method: :put }, class: 'btn btn-default' do 
+                  - if (pic.get_upvotes.size == 0)
+                    %span.glyphicon.glyphicon-heart-empty
+                  - else  
+                    %span.glyphicon.glyphicon-heart 
+                  = pic.get_upvotes.size
